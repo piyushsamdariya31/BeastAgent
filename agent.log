@@ -1,0 +1,102 @@
+2026-10-03 22:32:58,416 | INFO | boot: Beast started
+2026-10-03 22:32:59,413 | ERROR | you@gmail.com: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'
+2026-10-03 22:32:59,414 | INFO | Fetched 0 new emails from 1 account(s)
+2026-10-03 22:32:59,414 | INFO | error: Sync failed: you@gmail.com: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'
+2026-10-03 22:32:59,415 | INFO | mail: Fetched 0 new emails
+2026-10-03 22:32:59,415 | INFO | llm: Triage done: 0 worth it
+2026-10-03 22:33:37,357 | INFO | HTTP Request: GET https://api.anthropic.com/v1/models?limit=100 "HTTP/1.1 401 Unauthorized"
+2026-10-03 22:34:58,125 | INFO | todo: Added mission: i love nishta
+2026-10-03 22:34:59,570 | INFO | todo: Toggled mission #1
+2026-10-03 22:35:28,600 | INFO | chat: You: Tell me when the laptop on shop.example.com drops below 45000
+2026-10-03 22:35:29,175 | INFO | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-10-03 22:35:29,176 | ERROR | api error
+Traceback (most recent call last):
+  File "C:\Users\piyus\OneDrive\Desktop\Beast\beast\server.py", line 628, in do_POST
+    self._send(200, route(self.path, d))
+                    ~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\piyus\OneDrive\Desktop\Beast\beast\server.py", line 434, in route
+    return chat(d.get("conv_id"), str(d["message"])[:8000])
+  File "C:\Users\piyus\OneDrive\Desktop\Beast\beast\server.py", line 347, in chat
+    reply = loop(conv, SYSTEM + "\n\n" + context(), TOOLS_ALL, out)
+  File "C:\Users\piyus\OneDrive\Desktop\Beast\beast\server.py", line 329, in loop
+    r = llm.client().messages.create(model=models.pick("balanced"), max_tokens=12000, system=system, tools=tools, messages=conv)
+  File "C:\Users\piyus\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\anthropic\_utils\_utils.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\piyus\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\anthropic\resources\messages\messages.py", line 1029, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<26 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\piyus\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\anthropic\_base_client.py", line 1543, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\piyus\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\anthropic\_base_client.py", line 1208, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CfffhY4MCCvbYeFCG7rVW'}
+2026-10-03 22:35:38,247 | INFO | chat: You: Make a poster image for a hackathon
+2026-10-03 22:35:38,608 | INFO | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-10-03 22:35:38,609 | ERROR | api error
+Traceback (most recent call last):
+  File "C:\Users\piyus\OneDrive\Desktop\Beast\beast\server.py", line 628, in do_POST
+    self._send(200, route(self.path, d))
+                    ~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\piyus\OneDrive\Desktop\Beast\beast\server.py", line 434, in route
+    return chat(d.get("conv_id"), str(d["message"])[:8000])
+  File "C:\Users\piyus\OneDrive\Desktop\Beast\beast\server.py", line 347, in chat
+    reply = loop(conv, SYSTEM + "\n\n" + context(), TOOLS_ALL, out)
+  File "C:\Users\piyus\OneDrive\Desktop\Beast\beast\server.py", line 329, in loop
+    r = llm.client().messages.create(model=models.pick("balanced"), max_tokens=12000, system=system, tools=tools, messages=conv)
+  File "C:\Users\piyus\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\anthropic\_utils\_utils.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\piyus\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\anthropic\resources\messages\messages.py", line 1029, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<26 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\piyus\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\anthropic\_base_client.py", line 1543, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\piyus\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\anthropic\_base_client.py", line 1208, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CfffiEPkRjmR9Rgtf5YLz'}
+2026-10-03 22:35:44,247 | INFO | chat: You: Draft an announcement for #events about Friday's workshop
+2026-10-03 22:35:44,866 | INFO | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-10-03 22:35:44,867 | ERROR | api error
+Traceback (most recent call last):
+  File "C:\Users\piyus\OneDrive\Desktop\Beast\beast\server.py", line 628, in do_POST
+    self._send(200, route(self.path, d))
+                    ~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\piyus\OneDrive\Desktop\Beast\beast\server.py", line 434, in route
+    return chat(d.get("conv_id"), str(d["message"])[:8000])
+  File "C:\Users\piyus\OneDrive\Desktop\Beast\beast\server.py", line 347, in chat
+    reply = loop(conv, SYSTEM + "\n\n" + context(), TOOLS_ALL, out)
+  File "C:\Users\piyus\OneDrive\Desktop\Beast\beast\server.py", line 329, in loop
+    r = llm.client().messages.create(model=models.pick("balanced"), max_tokens=12000, system=system, tools=tools, messages=conv)
+  File "C:\Users\piyus\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\anthropic\_utils\_utils.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\piyus\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\anthropic\resources\messages\messages.py", line 1029, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<26 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\piyus\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\anthropic\_base_client.py", line 1543, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\piyus\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\anthropic\_base_client.py", line 1208, in request
+    raise self._make_status_error_from_response(response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011Cfffig3bZosMekZtAH8Cb'}

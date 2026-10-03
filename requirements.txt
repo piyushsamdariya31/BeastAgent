@@ -1,0 +1,10 @@
+anthropic>=0.40
+python-dotenv>=1.0
+google-api-python-client>=2.100
+google-auth-oauthlib>=1.2
+playwright>=1.45
+openpyxl>=3.1
+python-docx>=1.1
+pypdf>=4.0
+reportlab>=4.0
+plyer>=2.1
